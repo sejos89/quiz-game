@@ -1,0 +1,36 @@
+.topic {
+  background-color: #252d4a;
+  height: min-content;
+  border-radius: 15px;
+  /* padding: 20px; */
+  max-width: 700px;
+  margin: 10px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+}
+
+.topic p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.topic ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.topic ul li {
+  flex: 0 0 90px;
+  margin: 2px;
+}
+
+.topic ul li button {
+  text-align: center;
+  /* height: 58px; */
+  font-size: 12px;
+  max-width: 150px;
+}
