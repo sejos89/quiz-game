@@ -3,7 +3,7 @@
   height: min-content;
   border-radius: 15px;
   /* padding: 20px; */
-  max-width: 700px;
+  max-width: 95vw;
   margin: 10px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
@@ -15,22 +15,42 @@
 
 .topic ul {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  overflow: auto;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
+  /* justify-content: space-around; */
   list-style-type: none;
   cursor: pointer;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .topic ul li {
-  flex: 0 0 90px;
+  /* flex: 0 0 90px; */
   margin: 2px;
+  /* overflow: hidden; */
 }
 
 .topic ul li button {
   text-align: center;
   /* height: 58px; */
   font-size: 12px;
-  max-width: 150px;
+  min-width: 60px;
+  max-width: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.chosen-topic {
+  background: #4793cc;
+}
+
+@media only screen and (max-width: 600px) {
+  .topic ul li button {
+    max-width: 90px;
+  }
 }

@@ -6,6 +6,7 @@ import ToggleButton from "./ToggleButton";
 
 export default function Navigation({ changeTopic }) {
   const { toggleTheme } = useContext(AppContext);
+  const { topic } = useContext(AppContext);
 
   return (
     <div
@@ -14,61 +15,103 @@ export default function Navigation({ changeTopic }) {
     >
       <ToggleButton />
       <p style={toggleTheme ? { color: "black" } : {}}>Choose a Field:</p>
-      <ul>
+      <ul className="scrollBar">
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.nuclear_chemistry.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.nuclear_chemistry)}
           >
-            Nuclear Chemistry
+            {questions.nuclear_chemistry.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.periodic_relationship.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.periodic_relationship)}
           >
-            Periodic relationships
+            {questions.periodic_relationship.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.ionic_bond.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.ionic_bond)}
           >
-            The ionic bond
+            {questions.ionic_bond.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.covalent_bond.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.covalent_bond)}
           >
-            The covalent bond
+            {questions.covalent_bond.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.intermolecular.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.intermolecular)}
           >
-            Intermolecular forces
+            {questions.intermolecular.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.acids_bases.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.acids_bases)}
           >
-            Acids and Bases
+            {questions.acids_bases.title}
           </button>
         </li>
         <li>
           <button
-            className={toggleTheme ? "dark-button" : ""}
+            className={
+              topic.title === questions.redox.title
+                ? "chosen-topic"
+                : toggleTheme
+                ? "dark-button"
+                : ""
+            }
             onClick={() => changeTopic(questions.redox)}
           >
-            Redox reactions
+            {questions.redox.title}
           </button>
         </li>
       </ul>

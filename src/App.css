@@ -24,7 +24,11 @@
 /* QUESTION/TIMER/LEFT SECTION */
 .question-section {
   width: 100%;
-  /* position: relative; */
+}
+
+.question-section p {
+  margin-top: 0;
+  font-size: 18px;
 }
 
 .question-header-footer {
@@ -40,10 +44,6 @@
 
 .question-img-header-footer img {
   max-width: 100%;
-}
-
-.question-count {
-  padding: 10px;
 }
 
 .question-count span {
@@ -125,4 +125,40 @@ button:focus {
 
 button svg {
   margin-right: 5px;
+}
+
+/* width */
+.scrollBar::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+.scrollBar::-webkit-scrollbar-track {
+  background: rgb(49, 49, 49);
+}
+
+/* Handle */
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #1d71b1;
+  border-radius: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
