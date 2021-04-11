@@ -77,7 +77,7 @@ export default function App() {
                     /{topic.questions.length}
                   </div>
                   <div className="question-img-header-footer">
-                    <img src="https://i.ibb.co/S0VJbQv/chem-game-trasnsparent.png" />
+                    <img src="https://i.ibb.co/S0VJbQv/chem-game-trasnsparent.png" alt="random"/>
                   </div>
                 </div>
                 <div
@@ -129,7 +129,7 @@ export default function App() {
               <br />
               <div className="question-header-footer">
                 <div className="question-img-header-footer">
-                  <img src="https://i.ibb.co/qd7VCSY/uni-granada-transparent.png" />
+                  <img src="https://i.ibb.co/qd7VCSY/uni-granada-transparent.png" alt="random2" />
                 </div>
                 <button className="next-button" onClick={goNextQuestion}>
                   Next Question
