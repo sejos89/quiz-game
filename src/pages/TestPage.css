@@ -1,0 +1,134 @@
+.testpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .testpage {
+    flex-direction: column;
+  }
+}
+
+.test {
+  background-color: #252d4a;
+  max-width: 500px;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.score-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 24px;
+  align-items: center;
+}
+
+.question-section p {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.question-header-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.question-img-header-footer {
+  max-width: 175px;
+}
+
+.question-img-header-footer img {
+  max-width: 100%;
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-text {
+  margin-bottom: 12px;
+}
+
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer-section button {
+  flex: auto;
+  width: 100%;
+  margin: 5px;
+  text-align: left;
+}
+
+.dark-button {
+  color: black;
+}
+
+.test_footer div img {
+  max-width: 100%;
+}
+
+.next-button {
+  width: fit-content;
+  padding: 10px;
+  background: #4793cc;
+  border: 5px solid #234668;
+  color: #252d4a;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.correct {
+  background-color: #2f922f !important;
+}
+
+.incorrect {
+  background-color: #ff3333 !important;
+}
+
+.noHover {
+  pointer-events: none;
+}
+
+.scrollBar::-webkit-scrollbar {
+  height: 5px;
+}
+
+.scrollBar::-webkit-scrollbar-track {
+  background: rgb(49, 49, 49);
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #1d71b1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

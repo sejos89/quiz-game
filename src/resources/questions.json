@@ -313,7 +313,7 @@
     "title": "Periodic relationships",
     "questions": [
       {
-        "question": "The elements in Group 7A are known by what name?",
+        "question": "The elements in Group 17 are known by what name?",
         "answers": [
           "transition metals",
           "halogens",
@@ -326,9 +326,9 @@
       {
         "question": "The alkali metal elements are found in _______ of the periodic table",
         "answers": [
-          "Group 1A",
-          "Group 2A",
-          "Group 3A",
+          "Group 1",
+          "Group 2",
+          "Group 13",
           "Period 7",
           "Period 1"
         ],
@@ -357,7 +357,7 @@
         "correctAnswerIndex": 2
       },
       {
-        "question": "Which of the following is the general electron configuration for the outermost electrons of the elements in Group 5A?",
+        "question": "Which of the following is the general electron configuration for the outermost electrons of the elements in Group 15?",
         "answers": [
           "ns²np⁶",
           "ns²np⁵",
@@ -392,11 +392,11 @@
       {
         "question": "An element with the general electron configuration for its outermost electrons of ns²np¹ would be in which element group?",
         "answers": [
-          "2A",
-          "3A",
-          "4A",
-          "5A",
-          "8A"
+          "2",
+          "13",
+          "14",
+          "15",
+          "18"
         ],
         "correctAnswerIndex": 1
       },
