@@ -15,8 +15,16 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 button {
-  width: 100%;
+  /* width: 100%; */
   font-size: 16px;
   background-color: transparent;
   border-radius: 15px;
@@ -36,9 +44,9 @@ button:focus {
   outline: none;
 }
 
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-}
+} */

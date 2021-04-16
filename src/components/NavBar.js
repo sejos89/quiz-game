@@ -9,13 +9,33 @@ function NavBar() {
   const location = useLocation();
   return (
     <div
-      className="navbar"
+      className="header"
       style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
     >
-      <ul>
-        <li>
-          <Link to="/test">
-            <button
+      <div
+        className="navbar"
+        style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
+      >
+        <ToggleButton />
+
+        <ul>
+          <li>
+            <Link
+              to="/team"
+              className={
+                location.pathname === "/team"
+                  ? "chosen-topic"
+                  : toggleTheme
+                  ? "dark-button"
+                  : ""
+              }
+            >
+              Team
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/test"
               className={
                 location.pathname === "/test"
                   ? "chosen-topic"
@@ -25,28 +45,10 @@ function NavBar() {
               }
             >
               Tests
-            </button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/team">
-            <button
-              className={
-                location.pathname === "/team"
-                  ? "chosen-topic"
-                  : toggleTheme
-                  ? "dark-button"
-                  : ""
-              }
-            >
-              Equipo docente
-            </button>
-          </Link>
-        </li>
-        <li>
-          <ToggleButton />
-        </li>
-      </ul>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

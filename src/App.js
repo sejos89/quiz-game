@@ -12,11 +12,12 @@ function App() {
   const [topic, setTopic] = useState(questions.nuclear_chemistry);
 
   return (
-    <AppContext.Provider
-      value={{ toggleTheme, setToggleTheme, topic, setTopic }}
-    >
-      <Router>
-        <div className="main-container">
+    <div className="app-container">
+      <AppContext.Provider
+        value={{ toggleTheme, setToggleTheme, topic, setTopic }}
+      >
+        <Router>
+          {/* <div className="main-container"> */}
           <NavBar />
           <Route path="/test">
             <TestPage />
@@ -24,9 +25,16 @@ function App() {
           <Route path="/team">
             <TeamPage />
           </Route>
-        </div>
-      </Router>
-    </AppContext.Provider>
+          {/* </div> */}
+        </Router>
+      </AppContext.Provider>
+      <div
+        className="background-container"
+        style={{
+          backgroundImage: `linear-gradient(black, black), url("${process.env.PUBLIC_URL}/assets/periodic_table.PNG")`,
+        }}
+      ></div>
+    </div>
   );
 }
 

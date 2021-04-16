@@ -5,6 +5,7 @@
   /* padding: 20px; */
   max-width: 95vw;
   margin: 10px;
+  padding: 10px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -33,9 +34,15 @@
 .topic ul li button {
   text-align: center;
   font-size: 15px;
-  width: 120px;
+  width: 190px;
   overflow: hidden;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .topic ul li button {
+    width: 120px;
+  }
 }
 
 .chosen-topic {

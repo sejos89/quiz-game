@@ -10,29 +10,28 @@ function Team() {
       name: "Luisa M. Pastrana Martínez",
       rol: "Associate Researcher, PhD",
       email: "lpastrana@ugr.es",
-      imageURL: `${process.env.PUBLIC_URL}/assets/team1.png`,
-      // imageURL: "https://i.ibb.co/0Fg3Z5B/team2.png",
+      imageURL: `${process.env.PUBLIC_URL}/assets/team2.png`,
       coordinator: true,
     },
     {
       name: "Francisco J. Maldonado Hódar",
       rol: "Full Profesor",
       email: "fjmaldon@ugr.es",
-      imageURL: "https://i.ibb.co/n36z4Zd/team3.png",
+      imageURL: `${process.env.PUBLIC_URL}/assets/team3.png`,
       coordinator: false,
     },
     {
       name: "Sergio Morales Torres",
       rol: "Associate Researcher, PhD",
       email: "semoto@ugr.es",
-      imageURL: "https://i.ibb.co/T43K8b2/team4.jpg",
+      imageURL: `${process.env.PUBLIC_URL}/assets/team4.jpg`,
       coordinator: false,
     },
     {
       name: "Christian Alexis Sánchez Núñez",
       rol: "Professor",
       email: "cas@ugr.es",
-      imageURL: "https://i.ibb.co/QvxxWxh/team1.png",
+      imageURL: `${process.env.PUBLIC_URL}/assets/team1.png`,
       coordinator: false,
     },
   ];
@@ -40,11 +39,11 @@ function Team() {
     <div className="team-container">
       {team.map((member) => (
         <div
-          class="card"
+          className="card"
           style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
         >
           <img src={member.imageURL} alt="Avatar" />
-          <div class="container">
+          <div className="container">
             <h5>
               <b style={toggleTheme ? { color: "black" } : {}}>{member.name}</b>
             </h5>
