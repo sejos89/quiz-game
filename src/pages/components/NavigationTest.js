@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import questions from "../../resources/questions";
-import "./Navigation.css";
+import "./NavigationTest.css";
 
-export default function Navigation({ changeTopic }) {
+export default function NavigationTest({ changeTopic }) {
   const { toggleTheme } = useContext(AppContext);
   const { topic } = useContext(AppContext);
 

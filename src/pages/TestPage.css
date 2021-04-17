@@ -40,18 +40,22 @@
   font-size: 18px;
 }
 
-.question-header-footer {
+.question-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.question-img-header-footer {
+.question-footer {
+  text-align: right;
+}
+
+.question-img-header {
   max-width: 175px;
 }
 
-.question-img-header-footer img {
+.question-img-header img {
   max-width: 100%;
 }
 

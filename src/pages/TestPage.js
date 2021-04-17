@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./TestPage.css";
 import { AppContext } from "../context/AppContext";
-import Navigation from "./components/Navigation";
+import NavigationTest from "./components/NavigationTest";
 
 export default function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -46,7 +46,7 @@ export default function App() {
   return (
     <>
       <div className="testpage">
-        <Navigation changeTopic={onChangeTopic} />
+        <NavigationTest changeTopic={onChangeTopic} />
         <div
           className="test"
           style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
@@ -66,7 +66,7 @@ export default function App() {
                 <p style={toggleTheme ? { color: "black" } : {}}>
                   Current field: {topic.title}
                 </p>
-                <div className="question-header-footer">
+                <div className="question-header">
                   <div
                     className="question-count"
                     style={toggleTheme ? { color: "black" } : {}}
@@ -76,7 +76,7 @@ export default function App() {
                     </span>
                     /{topic.questions.length}
                   </div>
-                  <div className="question-img-header-footer">
+                  <div className="question-img-header">
                     <img src="https://i.ibb.co/S0VJbQv/chem-game-trasnsparent.png" />
                   </div>
                 </div>
@@ -127,10 +127,7 @@ export default function App() {
                 )}
               </div>
               <br />
-              <div className="question-header-footer">
-                <div className="question-img-header-footer">
-                  <img src="https://i.ibb.co/qd7VCSY/uni-granada-transparent.png" />
-                </div>
+              <div className="question-footer">
                 <button className="next-button" onClick={goNextQuestion}>
                   Next Question
                 </button>

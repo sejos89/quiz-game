@@ -4,8 +4,9 @@ import TestPage from "./pages/TestPage";
 import TeamPage from "./pages/TeamPage";
 import { AppContext } from "./context/AppContext";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import Navigation from "./components/Navigation";
 import questions from "./resources/questions";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [toggleTheme, setToggleTheme] = useState(false);
@@ -18,7 +19,7 @@ function App() {
       >
         <Router>
           {/* <div className="main-container"> */}
-          <NavBar />
+          <Navigation />
           <Route path="/test">
             <TestPage />
           </Route>
