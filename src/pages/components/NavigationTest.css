@@ -1,3 +1,19 @@
+.dropdown {
+  position: inherit !important;
+}
+
+.dropdown-toggle {
+  background: #cfd5df !important;
+  border: 3px solid black !important;
+  color: #252d4a !important;
+}
+.dropdown-menu {
+  padding: 0 !important;
+}
+.dropdown-item {
+  border-bottom: 2px solid grey !important;
+}
+
 .topic {
   background-color: #252d4a;
   height: min-content;
@@ -5,10 +21,11 @@
   /* padding: 20px; */
   max-width: 95vw;
   margin: 10px;
+  padding: 10px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
-.topic p {
+/* .topic p {
   font-size: 18px;
   padding: 0 10px 0 10px;
   text-align: center;
@@ -19,7 +36,7 @@
   flex-direction: column;
   overflow: auto;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   list-style-type: none;
   cursor: pointer;
   padding: 0;
@@ -33,17 +50,21 @@
 .topic ul li button {
   text-align: center;
   font-size: 15px;
-  width: 120px;
+  width: 190px;
   overflow: hidden;
   margin-bottom: 10px;
-}
-
-.chosen-topic {
-  background: #4793cc;
 }
 
 @media screen and (max-width: 600px) {
   .topic ul {
     flex-direction: row;
   }
+
+  .topic ul li button {
+    width: 120px;
+  }
 }
+
+.chosen-topic {
+  background: #4793cc;
+} */

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./TestPage.css";
 import { AppContext } from "../context/AppContext";
-import Navigation from "./components/Navigation";
+import NavigationTest from "./components/NavigationTest";
 
 export default function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -45,100 +45,87 @@ export default function App() {
   };
   return (
     <>
-      <div className="testpage">
-        <Navigation changeTopic={onChangeTopic} />
-        <div
-          className="test"
-          style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
-        >
-          {showScore ? (
-            <div className="score-section">
+      {/* <div className="testpage"> */}
+      <div className="test">
+        {showScore ? (
+          <div className="score-section">
+            <p style={toggleTheme ? { color: "black" } : {}}>
+              You scored {score} out of {topic.questions.length}
+            </p>
+            <button className="next-button" onClick={restartTest}>
+              Restart test
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="question-section">
               <p style={toggleTheme ? { color: "black" } : {}}>
-                You scored {score} out of {topic.questions.length}
+                Field: <NavigationTest changeTopic={onChangeTopic} />
               </p>
-              <button className="next-button" onClick={restartTest}>
-                Restart test
-              </button>
-            </div>
-          ) : (
-            <>
-              <div className="question-section">
-                <p style={toggleTheme ? { color: "black" } : {}}>
-                  Current field: {topic.title}
-                </p>
-                <div className="question-header-footer">
-                  <div
-                    className="question-count"
-                    style={toggleTheme ? { color: "black" } : {}}
-                  >
-                    <span style={toggleTheme ? { color: "black" } : {}}>
-                      Question {currentQuestion + 1}
-                    </span>
-                    /{topic.questions.length}
-                  </div>
-                  <div className="question-img-header-footer">
-                    <img src="https://i.ibb.co/S0VJbQv/chem-game-trasnsparent.png" />
-                  </div>
-                </div>
+              <div className="question-header">
                 <div
-                  className="question-text"
+                  className="question-count"
                   style={toggleTheme ? { color: "black" } : {}}
                 >
-                  {topic.questions[currentQuestion].question}
+                  <span style={toggleTheme ? { color: "black" } : {}}>
+                    Question {currentQuestion + 1}
+                  </span>
+                  /{topic.questions.length}
+                </div>
+                <div className="question-img-header">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/assets/chem_game_transparent.png`}
+                  />
                 </div>
               </div>
-              <div className="answer-section">
-                {topic.questions[currentQuestion].answers.map(
-                  (answer, index) => (
-                    <button
-                      disabled={questionAnswered}
-                      className={
-                        index ===
+              <div
+                className="question-text"
+                style={toggleTheme ? { color: "black" } : {}}
+              >
+                {topic.questions[currentQuestion].question}
+              </div>
+            </div>
+            <div className="answer-section">
+              {topic.questions[currentQuestion].answers.map((answer, index) => (
+                <button
+                  disabled={questionAnswered}
+                  className={
+                    index ===
+                      topic.questions[currentQuestion].correctAnswerIndex &&
+                    questionAnswered
+                      ? "noHover correct"
+                      : index === chosenAnswer &&
+                        index !==
                           topic.questions[currentQuestion].correctAnswerIndex &&
                         questionAnswered
-                          ? "noHover correct"
-                          : index === chosenAnswer &&
-                            index !==
-                              topic.questions[currentQuestion]
-                                .correctAnswerIndex &&
-                            questionAnswered
-                          ? "noHover incorrect"
-                          : questionAnswered
-                          ? "noHover"
-                          : ""
-                      }
-                      style={
-                        toggleTheme
-                          ? { backgroundColor: "#f3e3e1", color: "black" }
-                          : {}
-                      }
-                      onClick={(e) => {
-                        setQuestionAnswered(true);
-                        setChosenAnswer(index);
-                        handleAnswerOptionClick(
-                          index,
-                          topic.questions[currentQuestion].correctAnswerIndex
-                        );
-                      }}
-                    >
-                      {answer}
-                    </button>
-                  )
-                )}
-              </div>
-              <br />
-              <div className="question-header-footer">
-                <div className="question-img-header-footer">
-                  <img src="https://i.ibb.co/qd7VCSY/uni-granada-transparent.png" />
-                </div>
-                <button className="next-button" onClick={goNextQuestion}>
-                  Next Question
+                      ? "noHover incorrect"
+                      : questionAnswered
+                      ? "noHover"
+                      : ""
+                  }
+                  onClick={(e) => {
+                    setQuestionAnswered(true);
+                    setChosenAnswer(index);
+                    handleAnswerOptionClick(
+                      index,
+                      topic.questions[currentQuestion].correctAnswerIndex
+                    );
+                  }}
+                >
+                  {answer}
                 </button>
-              </div>
-            </>
-          )}
-        </div>
+              ))}
+            </div>
+            <br />
+            <div className="question-footer">
+              <button className="next-button" onClick={goNextQuestion}>
+                Next Question
+              </button>
+            </div>
+          </>
+        )}
       </div>
+      {/* </div> */}
     </>
   );
 }

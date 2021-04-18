@@ -1,32 +1,44 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import TestPage from "./pages/TestPage";
 import TeamPage from "./pages/TeamPage";
 import { AppContext } from "./context/AppContext";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import Navigation from "./components/Navigation";
 import questions from "./resources/questions";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [toggleTheme, setToggleTheme] = useState(false);
+  const [toggleTheme, setToggleTheme] = useState(true);
   const [topic, setTopic] = useState(questions.nuclear_chemistry);
 
   return (
-    <AppContext.Provider
-      value={{ toggleTheme, setToggleTheme, topic, setTopic }}
-    >
-      <Router>
-        <div className="main-container">
-          <NavBar />
-          <Route path="/test">
-            <TestPage />
-          </Route>
-          <Route path="/team">
-            <TeamPage />
-          </Route>
-        </div>
-      </Router>
-    </AppContext.Provider>
+    <div className="app-container">
+      <AppContext.Provider
+        value={{ toggleTheme, setToggleTheme, topic, setTopic }}
+      >
+        <Router>
+          <Navigation />
+          <main className="main-container">
+            <Route path="/">
+              <Redirect to="/test" />
+            </Route>
+            <Route path="/test">
+              <TestPage />
+            </Route>
+            <Route path="/team">
+              <TeamPage />
+            </Route>
+          </main>
+        </Router>
+      </AppContext.Provider>
+      <div
+        className="background-container"
+        style={{
+          backgroundImage: `linear-gradient(black, black), url("${process.env.PUBLIC_URL}/assets/periodic_table.PNG")`,
+        }}
+      ></div>
+    </div>
   );
 }
 

@@ -11,18 +11,26 @@ body {
 * {
   font-family: "Verdana", cursive, sans-serif;
   -webkit-tap-highlight-color: transparent !important;
-  color: #ffffff;
+  color: black;
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 button {
-  width: 100%;
+  /* width: 100%; */
   font-size: 16px;
-  background-color: transparent;
-  border-radius: 15px;
+  background-color: #cfd5df;
+  border-radius: 5px !important;
   padding: 5px;
   align-items: center;
-  border: 5px solid #234668;
+  border: 2px solid black;
   cursor: pointer;
 }
 
@@ -36,9 +44,9 @@ button:focus {
   outline: none;
 }
 
-#root {
+/* #root {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-}
+} */
