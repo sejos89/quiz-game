@@ -1,7 +1,7 @@
 .team-container {
   width: 100vw;
   min-height: 100vh;
-  padding: 140px 20px 0px;
+  padding: 150px 20px 0px;
   background-color: #9aa9ba;
 }
 
@@ -41,13 +41,13 @@
 
 @media screen and (min-width: 830px) {
   .team-container {
-    max-width: 800px;
+    max-width: 900px;
     min-height: 200px;
-    height: min-content;
+    /* height: min-content; */
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 40px 40px;
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
-    margin: 150px auto 0px;
+    margin: 220px auto 0px;
   }
 
   .card-body {
