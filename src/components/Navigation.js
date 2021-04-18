@@ -4,22 +4,53 @@ import { AppContext } from "../context/AppContext";
 import "./Navigation.css";
 import ToggleButton from "./ToggleButton";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
-function NavBar() {
+export default function Navigation() {
   const { toggleTheme } = useContext(AppContext);
   const location = useLocation();
   return (
-    <NavBar collapseOnSelect fixed="top" expand="sm" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <Nav.Link href="/test"></Nav.Link>
-            <Nav.Link href="/team"></Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </NavBar>
+    <>
+      <Navbar
+        collapseOnSelect
+        fixed="top"
+        expand="sm"
+        bg="light"
+        variant="light"
+      >
+        <Container className="justify-content-between">
+          <Navbar.Brand href="#">
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/ugr-horizontal-color.svg`}
+              width="200"
+              className="d-inline-block align-top"
+              alt="Uni Granada logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="justify-content-end"
+          >
+            <Nav className="align-items-center">
+              <LinkContainer to="/test">
+                <Nav.Link>Test</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/team">
+                <Nav.Link>Team</Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <div className="subheader">
+        <p>
+          HERRAMIENTAS VIRTUALES EN INGLÉS PARA UN APRENDIZAJE INTERACTIVO Y
+          DIVERTIDO DE LA QUÍMICA: CHEMGAME. Proyecto de Innovación Docente
+          (20-07). Convocatoria PIBD 2020-2022
+        </p>
+      </div>
+    </>
     // <div
     //   className="header"
     //   style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
@@ -75,5 +106,3 @@ function NavBar() {
     // </div>
   );
 }
-
-export default NavBar;

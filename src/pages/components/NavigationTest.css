@@ -1,3 +1,19 @@
+.dropdown {
+  position: inherit !important;
+}
+
+.dropdown-toggle {
+  background: #cfd5df !important;
+  border: 3px solid black !important;
+  color: #252d4a !important;
+}
+.dropdown-menu {
+  padding: 0 !important;
+}
+.dropdown-item {
+  border-bottom: 2px solid grey !important;
+}
+
 .topic {
   background-color: #252d4a;
   height: min-content;
@@ -9,7 +25,7 @@
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
-.topic p {
+/* .topic p {
   font-size: 18px;
   padding: 0 10px 0 10px;
   text-align: center;
@@ -51,4 +67,4 @@
 
 .chosen-topic {
   background: #4793cc;
-}
+} */

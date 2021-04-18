@@ -37,12 +37,31 @@ function Team() {
   ];
   return (
     <div className="team-container">
-      {team.map((member) => (
-        <div
-          className="card"
-          style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
-        >
-          <img src={member.imageURL} alt="Avatar" />
+      <div className="row row-cols-2 row-cols-sm-4 pt-2">
+        {team.map((member) => (
+          <div className="col mb-4">
+            <div className="card h-100">
+              <div className="card-image">
+                <img src={member.imageURL} className="card-img-top" alt="..." />
+              </div>
+              <div className="card-body text-align-center">
+                <p className="card-title text-center">{member.name}</p>
+                <p className="card-text text-center">{member.rol}</p>
+                {member.coordinator && (
+                  <p className="card-text text-center">(Coordinator)</p>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Team;
+{
+  /* <img src={member.imageURL} alt="Avatar" />
           <div className="container">
             <h5>
               <b style={toggleTheme ? { color: "black" } : {}}>{member.name}</b>
@@ -55,10 +74,5 @@ function Team() {
               <p style={toggleTheme ? { color: "black" } : {}}>(Coordinator)</p>
             )}
           </div>
-        </div>
-      ))}
-    </div>
-  );
+        </div> */
 }
-
-export default Team;
