@@ -1,28 +1,38 @@
-.testpage {
+/* .testpage {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  height: calc(100vh - 50px);
+} */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .testpage {
     flex-direction: column;
+    height: fit-content;
   }
-}
-
+} */
 .test {
-  background-color: #252d4a;
-  max-width: 500px;
-  min-height: 200px;
-  height: min-content;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 140px 20px 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 10px;
+  background-color: #9aa9ba;
+  /* background-color: #f8f9fa; */
+}
+
+@media screen and (min-width: 575px) {
+  .test {
+    max-width: 600px;
+    min-height: 200px;
+    height: min-content;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    margin: 150px auto 0;
+  }
 }
 
 .score-section {
@@ -33,23 +43,31 @@
   align-items: center;
 }
 
+.question-section {
+  padding-top: 10px;
+}
+
 .question-section p {
   margin-top: 0;
   font-size: 18px;
 }
 
-.question-header-footer {
+.question-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.question-img-header-footer {
+.question-footer {
+  text-align: right;
+}
+
+.question-img-header {
   max-width: 175px;
 }
 
-.question-img-header-footer img {
+.question-img-header img {
   max-width: 100%;
 }
 
@@ -84,27 +102,26 @@
 
 .next-button {
   width: fit-content;
-  padding: 10px;
-  background: #4793cc;
-  border: 5px solid #234668;
+  padding: 5px 10px;
+  /* background: #4793cc; */
+  border: 3px solid black;
   color: #252d4a;
-  font-weight: bold;
   margin-left: 30px;
 }
 
 .correct {
-  background-color: #2f922f !important;
+  background-color: #499f49 !important;
 }
 
 .incorrect {
-  background-color: #ff3333 !important;
+  background-color: #d93e3e !important;
 }
 
 .noHover {
   pointer-events: none;
 }
 
-.scrollBar::-webkit-scrollbar {
+/* .scrollBar::-webkit-scrollbar {
   height: 5px;
 }
 
@@ -131,4 +148,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+} */
