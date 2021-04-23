@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
-import TestPage from "./pages/TestPage";
-import TeamPage from "./pages/TeamPage";
+import TestPage from "./pages/TestPage/TestPage";
+import TeamPage from "./pages/TeamPage/TeamPage";
 import { AppContext } from "./context/AppContext";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import questions from "./resources/questions";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   const [toggleTheme, setToggleTheme] = useState(true);
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/team">
               <TeamPage />
+            </Route>
+            <Route path="/about">
+              <AboutPage />
             </Route>
           </main>
         </Router>

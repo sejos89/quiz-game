@@ -39,15 +39,17 @@ export default function Navigation() {
               <LinkContainer to="/team">
                 <Nav.Link>Team</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="/about">
+                <Nav.Link>About</Nav.Link>
+              </LinkContainer>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <div className="subheader">
         <p>
-          HERRAMIENTAS VIRTUALES EN INGLÉS PARA UN APRENDIZAJE INTERACTIVO Y
-          DIVERTIDO DE LA QUÍMICA: CHEMGAME. Proyecto de Innovación Docente
-          (20-07). Convocatoria PIBD 2020-2022
+          <b>CHEMGAME</b>
+          <br /> Proyecto de Innovación Docente (20-07)
         </p>
       </div>
     </>

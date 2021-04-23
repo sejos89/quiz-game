@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./TestPage.css";
-import { AppContext } from "../context/AppContext";
-import NavigationTest from "./components/NavigationTest";
+import { AppContext } from "../../context/AppContext";
+import NavigationTest from "../components/NavigationTest";
 
 export default function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -45,7 +45,6 @@ export default function App() {
   };
   return (
     <>
-      {/* <div className="testpage"> */}
       <div className="test">
         {showScore ? (
           <div className="score-section">
@@ -125,7 +124,6 @@ export default function App() {
           </>
         )}
       </div>
-      {/* </div> */}
     </>
   );
 }
