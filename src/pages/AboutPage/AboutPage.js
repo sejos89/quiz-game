@@ -20,11 +20,6 @@ function AboutPage() {
         impulsando la comprensión de los fundamentos teóricos, propiedades de
         compuestos químicos y técnicas comunes usadas en su estudio en inglés.
       </p>
-      {/* <div className="about-img">
-        <img
-          src={`${process.env.PUBLIC_URL}/assets/chem_game_transparent.png`}
-        />
-      </div> */}
     </div>
   );
 }

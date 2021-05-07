@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import React from "react";
 import "./TeamPage.css";
 
 function Team() {
-  const { toggleTheme } = useContext(AppContext);
-
   const team = [
     {
       name: "Luisa M. Pastrana Martínez",
@@ -60,19 +57,3 @@ function Team() {
 }
 
 export default Team;
-{
-  /* <img src={member.imageURL} alt="Avatar" />
-          <div className="container">
-            <h5>
-              <b style={toggleTheme ? { color: "black" } : {}}>{member.name}</b>
-            </h5>
-            <p className="rol" style={toggleTheme ? { color: "black" } : {}}>
-              {member.rol}
-            </p>
-            <p style={toggleTheme ? { color: "black" } : {}}>{member.email}</p>
-            {member.coordinator && (
-              <p style={toggleTheme ? { color: "black" } : {}}>(Coordinator)</p>
-            )}
-          </div>
-        </div> */
-}

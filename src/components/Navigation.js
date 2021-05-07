@@ -1,14 +1,10 @@
-import React, { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { AppContext } from "../context/AppContext";
+import React from "react";
+
 import "./Navigation.css";
-import ToggleButton from "./ToggleButton";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 export default function Navigation() {
-  const { toggleTheme } = useContext(AppContext);
-  const location = useLocation();
   return (
     <>
       <Navbar

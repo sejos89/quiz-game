@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import TestPage from "./pages/TestPage/TestPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import { AppContext } from "./context/AppContext";
@@ -10,29 +15,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
-  const [toggleTheme, setToggleTheme] = useState(true);
   const [topic, setTopic] = useState(questions.nuclear_chemistry);
 
   return (
     <div className="app-container">
-      <AppContext.Provider
-        value={{ toggleTheme, setToggleTheme, topic, setTopic }}
-      >
+      <AppContext.Provider value={{ topic, setTopic }}>
         <Router>
           <Navigation />
           <main className="main-container">
-            <Route path="/">
-              <Redirect to="/test" />
-            </Route>
-            <Route path="/test">
-              <TestPage />
-            </Route>
-            <Route path="/team">
-              <TeamPage />
-            </Route>
-            <Route path="/about">
-              <AboutPage />
-            </Route>
+            <Switch>
+              <Route path="/" exact>
+                <Redirect to="/test" />
+              </Route>
+              <Route path="/test">
+                <TestPage />
+              </Route>
+              <Route path="/team">
+                <TeamPage />
+              </Route>
+              <Route path="/about">
+                <AboutPage />
+              </Route>
+              <Route>
+                <Redirect to="/test" />
+              </Route>
+            </Switch>
           </main>
         </Router>
       </AppContext.Provider>
