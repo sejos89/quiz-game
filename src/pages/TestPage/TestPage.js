@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./TestPage.css";
-import { AppContext } from "../context/AppContext";
-import NavigationTest from "./components/NavigationTest";
+import { AppContext } from "../../context/AppContext";
+import NavigationTest from "../components/NavigationTest";
 
 export default function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -9,7 +9,6 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [chosenAnswer, setChosenAnswer] = useState(null);
-  const { toggleTheme } = useContext(AppContext);
   const { topic, setTopic } = useContext(AppContext);
 
   useEffect(() => {
@@ -45,11 +44,10 @@ export default function App() {
   };
   return (
     <>
-      {/* <div className="testpage"> */}
       <div className="test">
         {showScore ? (
           <div className="score-section">
-            <p style={toggleTheme ? { color: "black" } : {}}>
+            <p>
               You scored {score} out of {topic.questions.length}
             </p>
             <button className="next-button" onClick={restartTest}>
@@ -59,18 +57,13 @@ export default function App() {
         ) : (
           <>
             <div className="question-section">
-              <p style={toggleTheme ? { color: "black" } : {}}>
+              <p>
                 Field: <NavigationTest changeTopic={onChangeTopic} />
               </p>
               <div className="question-header">
-                <div
-                  className="question-count"
-                  style={toggleTheme ? { color: "black" } : {}}
-                >
-                  <span style={toggleTheme ? { color: "black" } : {}}>
-                    Question {currentQuestion + 1}
-                  </span>
-                  /{topic.questions.length}
+                <div className="question-count">
+                  <span>Question {currentQuestion + 1}</span>/
+                  {topic.questions.length}
                 </div>
                 <div className="question-img-header">
                   <img
@@ -78,10 +71,7 @@ export default function App() {
                   />
                 </div>
               </div>
-              <div
-                className="question-text"
-                style={toggleTheme ? { color: "black" } : {}}
-              >
+              <div className="question-text">
                 {topic.questions[currentQuestion].question}
               </div>
             </div>
@@ -125,7 +115,6 @@ export default function App() {
           </>
         )}
       </div>
-      {/* </div> */}
     </>
   );
 }

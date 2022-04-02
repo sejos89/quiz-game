@@ -5,7 +5,6 @@ import questions from "../../resources/questions";
 import "./NavigationTest.css";
 
 export default function NavigationTest({ changeTopic }) {
-  const { toggleTheme } = useContext(AppContext);
   const { topic } = useContext(AppContext);
 
   return (
@@ -20,29 +19,5 @@ export default function NavigationTest({ changeTopic }) {
         </Dropdown.Item>
       ))}
     </DropdownButton>
-    //   <div
-    //     className="topic"
-    //     style={toggleTheme ? { backgroundColor: "#f3e3e1" } : {}}
-    //   >
-    //     <p style={toggleTheme ? { color: "black" } : {}}>Choose a Field:</p>
-    //     <ul className="scrollBar">
-    //       {Object.entries(questions).map((item) => (
-    //         <li>
-    //           <button
-    //             className={
-    //               topic.title === item[1].title
-    //                 ? "chosen-topic"
-    //                 : toggleTheme
-    //                 ? "dark-button"
-    //                 : ""
-    //             }
-    //             onClick={() => changeTopic(item[1])}
-    //           >
-    //             {item[1].title}
-    //           </button>
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </div>
   );
 }
