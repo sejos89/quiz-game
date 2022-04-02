@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
+  HashRouter,
   Redirect,
   Route,
   Switch,
@@ -13,6 +14,7 @@ import Navigation from "./components/Navigation";
 import questions from "./resources/questions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [topic, setTopic] = useState(questions.nuclear_chemistry);
@@ -20,28 +22,30 @@ function App() {
   return (
     <div className="app-container">
       <AppContext.Provider value={{ topic, setTopic }}>
-        <Router>
-          <Navigation />
-          <main className="main-container">
-            <Switch>
-              <Route path="/" exact>
-                <Redirect to="/test" />
-              </Route>
-              <Route path="/test">
-                <TestPage />
-              </Route>
-              <Route path="/team">
-                <TeamPage />
-              </Route>
-              <Route path="/about">
-                <AboutPage />
-              </Route>
-              <Route>
-                <Redirect to="/test" />
-              </Route>
-            </Switch>
-          </main>
-        </Router>
+        <HashRouter>
+          <ScrollToTop>
+            <Navigation />
+            <main className="main-container">
+              <Switch>
+                <Route path="/" exact>
+                  <Redirect to="/test" />
+                </Route>
+                <Route path="/test">
+                  <TestPage />
+                </Route>
+                <Route path="/team">
+                  <TeamPage />
+                </Route>
+                <Route path="/about">
+                  <AboutPage />
+                </Route>
+                <Route>
+                  <Redirect to="/test" />
+                </Route>
+              </Switch>
+            </main>
+          </ScrollToTop>
+        </HashRouter>
       </AppContext.Provider>
       <div
         className="background-container"
