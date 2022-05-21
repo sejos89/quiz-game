@@ -5,6 +5,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 export default function Navigation() {
+  console.log(window.screen.width);
   return (
     <>
       <Navbar
@@ -32,6 +33,11 @@ export default function Navigation() {
               <LinkContainer to="/test">
                 <Nav.Link>Test</Nav.Link>
               </LinkContainer>
+              {window.screen.width >= 1000 ? (
+                <LinkContainer to="/game">
+                  <Nav.Link>Game</Nav.Link>
+                </LinkContainer>
+              ) : null}
               <LinkContainer to="/team">
                 <Nav.Link>Team</Nav.Link>
               </LinkContainer>

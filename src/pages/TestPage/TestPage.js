@@ -115,6 +115,12 @@ export default function App() {
           </>
         )}
       </div>
+      <div
+        className="background-container"
+        style={{
+          backgroundImage: `linear-gradient(black, black), url("${process.env.PUBLIC_URL}/assets/periodic_table.PNG")`,
+        }}
+      ></div>
     </>
   );
 }

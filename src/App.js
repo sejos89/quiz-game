@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  HashRouter,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import TestPage from "./pages/TestPage/TestPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import { AppContext } from "./context/AppContext";
@@ -15,6 +9,7 @@ import questions from "./resources/questions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ScrollToTop from "./ScrollToTop";
+import GamePage from "./pages/GamePage/GamePage";
 
 function App() {
   const [topic, setTopic] = useState(questions.nuclear_chemistry);
@@ -33,6 +28,13 @@ function App() {
                 <Route path="/test">
                   <TestPage />
                 </Route>
+                <Route path="/game">
+                  {window.screen.width >= 576 ? (
+                    <GamePage />
+                  ) : (
+                    <Redirect to="/test" />
+                  )}
+                </Route>
                 <Route path="/team">
                   <TeamPage />
                 </Route>
@@ -47,12 +49,6 @@ function App() {
           </ScrollToTop>
         </HashRouter>
       </AppContext.Provider>
-      <div
-        className="background-container"
-        style={{
-          backgroundImage: `linear-gradient(black, black), url("${process.env.PUBLIC_URL}/assets/periodic_table.PNG")`,
-        }}
-      ></div>
     </div>
   );
 }

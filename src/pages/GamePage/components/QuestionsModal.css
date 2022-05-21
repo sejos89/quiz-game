@@ -1,0 +1,12 @@
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer-section button {
+  flex: auto;
+  width: 100%;
+  margin: 5px;
+  text-align: left;
+}

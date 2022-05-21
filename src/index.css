@@ -44,9 +44,6 @@ button:focus {
   outline: none;
 }
 
-/* #root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-} */
+.bold {
+  font-weight: bold;
+}

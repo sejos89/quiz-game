@@ -1,0 +1,51 @@
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2vw;
+  max-width: 1700px;
+}
+
+#table {
+  display: grid;
+  grid-template-columns: repeat(17, auto) 1fr;
+  line-height: 1.15;
+  margin-top: 150px;
+}
+
+#information {
+  grid-column: 4/12;
+  grid-row: 1/4;
+  padding: 0.5vw;
+  padding-top: 0;
+  /* font-size: 1vw; */
+  max-height: 10vw;
+}
+
+.reset-button {
+  float: right;
+  padding: 0.7vw;
+  margin: 0.5vw 1vw 0 0;
+}
+
+.particles-won {
+  border: 3px solid black;
+  border-radius: 1rem;
+  font-size: 1.2vw;
+  padding: 1vw;
+  text-align: center;
+}
+
+.electron-icon {
+  color: red;
+  margin-left: 0.5rem;
+  width: 25px;
+}
+
+.reset-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.reset-disabled:hover {
+  background-color: inherit;
+}
