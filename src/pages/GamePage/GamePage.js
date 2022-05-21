@@ -6,10 +6,12 @@ import questions from "../../resources/questions";
 import QuestionsModal from "./components/QuestionsModal";
 import ResetModal from "./components/ResetModal";
 import ScoreModal from "./components/ScoreModal";
+import StartGameModal from "./components/StartGameModal";
 
 export default function GamePage() {
   const [showQuestionModal, setShowQuestionModal] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
+  const [showStartModal, setShowStartModal] = useState(false);
   const [showScore, setShowScore] = useState(false);
   const [numElem, setNumElem] = useState(1);
   const [score, setScore] = useState({ electron: 0, proton: 0, neutron: 0 });
@@ -85,6 +87,7 @@ export default function GamePage() {
   };
 
   useEffect(() => {
+    setShowStartModal(true);
     for (const property in questions) {
       allQuestions.current = allQuestions.current.concat(
         questions[property].questions
@@ -98,6 +101,9 @@ export default function GamePage() {
   return (
     <div className="wrapper">
       <div id="table">
+        {showStartModal ? (
+          <StartGameModal setShowStartModal={setShowStartModal} />
+        ) : null}
         {showScore ? (
           <ScoreModal
             score={score}
@@ -127,12 +133,12 @@ export default function GamePage() {
         {populateElements(1, 4)}
         <div id="information">
           <p className="particles-won">
-            You have won <span className="bold">{score.electron}</span>{" "}
-            Electrons, <span className="bold">{score.proton}</span> Protons and{" "}
+            You have <span className="bold">{score.electron}</span> Electrons,{" "}
+            <span className="bold">{score.proton}</span> Protons and{" "}
             <span className="bold">{score.neutron}</span> Neutrons
             <img
               className="electron-icon"
-              src="/assets/electron.svg"
+              src={`${process.env.PUBLIC_URL}/assets/electron.svg`}
               width="30"
               alt="electron"
             ></img>

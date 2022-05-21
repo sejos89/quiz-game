@@ -5,7 +5,6 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 export default function Navigation() {
-  console.log(window.screen.width);
   return (
     <>
       <Navbar
