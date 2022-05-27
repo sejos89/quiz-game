@@ -16,6 +16,7 @@ function DiceModal({ handleRollDice, setShowDiceModal, rolledDice }) {
             handleRollDice(value);
             setGotValue(value);
           }}
+          disabled={rolledDice}
         />
         {gotValue && (
           <p style={{ marginTop: "2rem", fontSize: "1.3rem" }}>

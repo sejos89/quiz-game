@@ -25,12 +25,14 @@ export default function GamePage() {
   const [chosenAnswer, setChosenAnswer] = useState(null);
   const [questionAnswered, setQuestionAnswered] = useState(false);
 
-  const handleStartGame = (name) => {
+  const handleStartGame = () => {
     setShowStartModal(false);
   };
 
   const handleRollDice = (value) => {
-    setNumElem(numElem + value);
+    const final = elements.length - 2;
+    const sum = numElem + value < final ? numElem + value : final;
+    setNumElem(sum);
     setDiceValue(value);
     setRolledDice(true);
   };
@@ -213,7 +215,7 @@ export default function GamePage() {
             variant="secondary"
             onClick={() => setShowDiceModal(true)}
           >
-            Roll the dice
+            Roll the dice!
           </button>
         </div>
         <div id="manageGame">
