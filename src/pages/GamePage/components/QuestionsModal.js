@@ -21,6 +21,7 @@ function QuestionsModal({
         <div className="answer-section">
           {allQuestions.current[numElem]?.answers.map((answer, index) => (
             <button
+              key={index}
               disabled={questionAnswered}
               className={
                 index === allQuestions.current[numElem].correctAnswerIndex &&
@@ -51,7 +52,7 @@ function QuestionsModal({
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Close
+          Next Question
         </Button>
       </Modal.Footer>
     </Modal>
