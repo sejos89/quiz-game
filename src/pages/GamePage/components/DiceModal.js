@@ -5,6 +5,11 @@ import "./DiceModal.css";
 
 function DiceModal({ handleRollDice, setShowDiceModal, rolledDice }) {
   const [gotValue, setGotValue] = useState(null);
+  const closeDiceDialog = () =>
+    setTimeout(() => {
+      setShowDiceModal(false);
+      setGotValue(null);
+    }, 1500);
   return (
     <Modal show={true} onHide={() => {}} animation={false} centered>
       <Modal.Header>
@@ -15,26 +20,15 @@ function DiceModal({ handleRollDice, setShowDiceModal, rolledDice }) {
           onRoll={(value) => {
             handleRollDice(value);
             setGotValue(value);
+            closeDiceDialog();
           }}
           disabled={rolledDice}
         />
-        {gotValue && (
-          <p style={{ marginTop: "2rem", fontSize: "1.3rem" }}>
-            You got a {gotValue} !
-          </p>
-        )}
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          disabled={!rolledDice}
-          variant="secondary"
-          onClick={() => {
-            setShowDiceModal(false);
-            setGotValue(null);
-          }}
-        >
-          Close
-        </Button>
+        {gotValue && (
+          <p style={{ fontSize: "1.5rem" }}>You got a {gotValue} !</p>
+        )}
       </Modal.Footer>
     </Modal>
   );

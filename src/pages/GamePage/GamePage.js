@@ -11,6 +11,7 @@ import FinishGameModal from "./components/FinishGameModal";
 import DiceModal from "./components/DiceModal";
 
 export default function GamePage() {
+  const [startedGame, setStartedGame] = useState(false);
   const [playerName, setPlayerName] = useState("");
   const [showDiceModal, setShowDiceModal] = useState(false);
   const [rolledDice, setRolledDice] = useState(false);
@@ -19,21 +20,19 @@ export default function GamePage() {
   const [showStartModal, setShowStartModal] = useState(false);
   const [showFinishGameModal, setShowFinishGameModal] = useState(false);
   const [showScore, setShowScore] = useState(false);
-  const [diceValue, setDiceValue] = useState(1);
   const [numElem, setNumElem] = useState(0);
   const [score, setScore] = useState({ electron: 0, proton: 0, neutron: 0 });
   const [chosenAnswer, setChosenAnswer] = useState(null);
   const [questionAnswered, setQuestionAnswered] = useState(false);
+  const final = elements.length - 2;
 
   const handleStartGame = () => {
     setShowStartModal(false);
   };
 
   const handleRollDice = (value) => {
-    const final = elements.length - 2;
     const sum = numElem + value < final ? numElem + value : final;
     setNumElem(sum);
-    setDiceValue(value);
     setRolledDice(true);
   };
 
@@ -73,6 +72,7 @@ export default function GamePage() {
           electron: score.electron,
         });
       }
+      openDiceDialog();
     }
   };
 
@@ -137,6 +137,11 @@ export default function GamePage() {
       (a, b) => 0.5 - Math.random()
     );
   };
+
+  const openDiceDialog = () =>
+    setTimeout(() => {
+      setShowDiceModal(true);
+    }, 1500);
 
   return (
     <div className="wrapper">
@@ -210,12 +215,15 @@ export default function GamePage() {
             alt="electron"
           ></img>
           <button
-            disabled={rolledDice}
-            className={`dice-button ${rolledDice ? "reset-disabled" : ""}`}
+            disabled={startedGame}
+            className={`dice-button ${startedGame ? "reset-disabled" : ""}`}
             variant="secondary"
-            onClick={() => setShowDiceModal(true)}
+            onClick={() => {
+              setStartedGame(true);
+              setShowDiceModal(true);
+            }}
           >
-            Roll the dice!
+            Start the Game!
           </button>
         </div>
         <div id="manageGame">

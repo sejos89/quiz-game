@@ -50,7 +50,7 @@ export default function Navigation() {
       <div className="subheader">
         <p>
           <b>CHEMGAME</b>
-          <br /> Proyecto de Innovación Docente (20-07)
+          <br /> Proyecto de Innovación Docente (20-07) y (21-11)
         </p>
       </div>
     </>

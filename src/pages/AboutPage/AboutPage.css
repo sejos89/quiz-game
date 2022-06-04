@@ -22,7 +22,7 @@
 @media screen and (min-width: 575px) {
   .about {
     align-items: center;
-    max-width: 600px;
+    max-width: 730px;
     min-height: 200px;
     height: min-content;
     border-radius: 15px;
